@@ -8,15 +8,21 @@ const taskInput = document.querySelector('#task');
 // Carregar todos os event listeners
 loadEventListeners();
 
-function loadEventListeners(){
+function loadEventListeners() {
     // Evento de adicionar tarefa
     form.addEventListener('submit', addTask);
+    // Evento de excluir tarefa
+    taskList.addEventListener('click', removeTask);
+    // Evento de limpar tarefas
+    clearBtn.addEventListener('click', clearTasks);
+    // Evento de filtrar tarefas
+    filter.addEventListener('keyup', filterTasks);
 }
 
 // Adicionar tarefa
-function addTask(e){
+function addTask(e) {
 
-    if(taskInput.value === ''){
+    if (taskInput.value === '') {
         alert('Tarefa Adicionada');
     };
 
@@ -44,4 +50,40 @@ function addTask(e){
     console.log(li);
 
     e.preventDefault();
+}
+
+// Remover tarefa
+function removeTask(e) {
+    if (e.target.parentElement.classList.contains('delete-item')) {
+        if(confirm('Deseja excluir?')) {
+            e.target.parentElement.parentElement.remove();
+        }
+    }
+
+}
+
+// Limpar Tarefas
+function clearTasks(){
+    // Mais lento
+    // taskList.innerHTML = '';
+
+    // Mais rápido
+    while(taskList.firstChild){
+       taskList.removeChild(taskList.firstChild); 
+    }
+}
+
+// Filtrar tarefas
+function filterTasks(e){
+    const text = e.target.value.toLowerCase();
+
+    document.querySelectorAll('.collection-item').forEach(function(task){
+        const item = task.firstChild.textContent;
+        // != -1 quer dizer que não foi encontrado
+        if(item.toLowerCase().indexOf(text) != -1){
+            task.style.display = 'block';
+        }else {
+            task.style.display = 'none';
+        }
+    })
 }
