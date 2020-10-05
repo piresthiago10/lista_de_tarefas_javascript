@@ -20,12 +20,10 @@ O usuário da aplicação pode adicionar tarefas a serem realizadas e posteriorm
 
 ## Instalção:
 
-1. Baixe o projeto em sua máquina:
+1. Baixe o projeto em sua máquina ou clique em [Download ZIP]:
 ```
 git clone https://github.com/piresthiago10/lista_de_tarefas_javascript.git
 ```
-ou clique em [Download ZIP]
-
 2. Execute o arquivo index.html
 
 
