@@ -1,8 +1,8 @@
 # Lista de Tarefas em JavaScript
 
-    Aplicação web cujo o intuíto é enumerar tarefas a serem realizadas.
+Aplicação web cujo o intuíto é enumerar tarefas a serem realizadas.
 
-    O usuário da aplicação pode adicionar tarefas a serem realizadas e posteriormente excluí-las. As tarefas ficam armazenadas localmente até serem excluídas.
+O usuário da aplicação pode adicionar tarefas a serem realizadas e posteriormente excluí-las. As tarefas ficam armazenadas localmente até serem excluídas.
 
 # Autores
 
